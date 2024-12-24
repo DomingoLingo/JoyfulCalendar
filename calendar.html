@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="JoyfulCalendar">JoyfulCalendar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calendar-container">
+        <table id="calendar">
+          <thead>
+            <tr>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+              <th>Sun</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <input type="file" id="imageUpload" accept="image/*" style="display: none" />
+      <div class="background" id="background"></div>
+      <div class="controls">
+        <input type="date" id="dateInput" />
+        <input type="text" id="eventInput" placeholder="Enter event" /><select id="colorSelect">
+          <option value="#FFFFFF">White</option>
+          <option value="#FF0000">Red</option>
+          <option value="#00FF00">Green</option>
+          <option value="#0000FF">Blue</option>
+          <option value="#FFFF00">Yellow</option>
+          <option value="#FFA500">Orange</option>
+          <option value="#800080">Purple</option>
+        </select>
+        <button id="addEventButton" onclick="addEvent()">Add Event</button>
+        <button class="dropbtn" id="settingsList" onclick="toggleDropdown()">Settings</button>
+        <div id="myDropdown" class="dropdown-content">
+          <div class="language-settings" style="display: flex; align-items: center">
+            <select id="languageSelect" id="optionsSelect" onchange="changeLanguage()" onclick="event.stopPropagation()">
+              <option value="en">English</option>
+              <option value="de">Deutsch</option>
+              <option value="fr">Français</option>
+              <option value="es">Español</option>
+              <option value="it">Italiano</option>
+              <option value="pt">Português</option>
+              <option value="nl">Nederlands</option>
+              <option value="ru">Русский</option>
+              <option value="ja">日本語</option>
+              <option value="zh">中文</option>
+              <option value="ar">العربية</option>
+              <option value="ko">한국어</option>
+              <option value="tr">Türkçe</option>
+              <option value="sv">Svenska</option>
+              <option value="pl">Polski</option>
+            </select>
+          </div>
+          <button id="changeBackground" onclick="changeBackgroundImage()">Change backround image</button>
+          <button id="removeBackground" onclick="clearBackgroundImage()">Remove backround image</button>
+        </div>        <ul id="eventList" style="font-size: 0px"></ul>
+
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

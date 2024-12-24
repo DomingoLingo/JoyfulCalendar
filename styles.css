@@ -1,0 +1,141 @@
+.today {
+  background-color: #808080;
+}
+/* Grundlegendes Styling für alle Geräte */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column; /* Vertikales Layout für mobile Geräte */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.calendar-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+th,
+td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 8px;
+}
+th {
+  background-color: #808080;
+  color: #fff;
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Zentriere Steuerelemente */
+}
+.controls input,
+.controls button,
+.controls select {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #d3d3d3;
+  color: black;
+  border: none;
+  cursor: pointer;
+  width: 100%; /* gleiche Breite */
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.controls button:hover {
+  background-color: #a9a9a9;
+}
+
+/* Media Queries für größere Bildschirme */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row; /* Horizontales Layout für größere Bildschirme */
+    justify-content: flex-start;
+  }
+  .calendar-container {
+    width: 70%;
+    margin-right: 20px;
+  }
+  .controls {
+    width: 30%;
+    align-items: flex-start; /* Linksbündig auf größeren Bildschirmen */
+  }
+}
+
+@media (min-width: 1200px) {
+  .calendar-container {
+    width: 60%;
+  }
+  .controls {
+    width: 40%;
+  }
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* Style für den Hauptbutton */
+.dropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Inhalt des Dropdowns versteckt */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  z-index: 1;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Style für das <select>-Element im Dropdown */
+.dropdown-content select {
+  color: black;
+  padding: 10px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropdown-content select:hover {
+  background-color: #f1f1f1;
+}
+
+/* Dropdown anzeigen, wenn Button geklickt wurde */
+.show {
+  display: block;
+}
